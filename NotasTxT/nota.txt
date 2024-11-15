@@ -1,0 +1,39 @@
+[Contact(**contacto) for contacto in contactos]
+
+
+Hace lo siguiente:
+
+1- Iterar sobre la lista de diccionarios contactos: Aquí, contactos es una lista de diccionarios (probablemente cargada desde un archivo JSON o similar), donde cada diccionario representa un contacto individual.
+
+2- Asignar cada diccionario a contacto: En cada iteración, el diccionario actual se asigna a la variable contacto.
+
+3- Desempaquetar el diccionario y pasarlo como parámetros a la clase Contact: El **contacto dentro de la llamada a Contact() 
+desempaqueta el diccionario, pasando cada clave y valor como argumentos de palabra clave (keyword arguments) a la clase Contact. Esto significa que si el diccionario tiene las claves nombre, telefono, email, 
+esas claves se usan para inicializar los atributos correspondientes de la clase Contact.
+
+4- Crear una instancia de Contact: Para cada diccionario en la lista contactos, se crea un nuevo objeto de la clase Contact, inicializado con los datos de ese diccionario.
+
+Ejemplo:
+
+[
+    {"nombre": "Juan", "telefono": "123456789", "email": "juan@email.com"},
+    {"nombre": "Maria", "telefono": "987654321", "email": "maria@email.com"}
+]
+
+
+class Contact:
+    def __init__(self, nombre, telefono, email):
+        self.nombre = nombre
+        self.telefono = telefono
+        self.email = email
+
+
+[
+    Contact(nombre="Juan", telefono="123456789", email="juan@email.com"),
+    Contact(nombre="Maria", telefono="987654321", email="maria@email.com")
+]
+
+
+Errores:
+Contact(**contacto)
+Si se llega a cambiar "Conatct", dara error al no coincidir los datos del objeto/instacia con la clase.
